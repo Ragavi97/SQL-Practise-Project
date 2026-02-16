@@ -42,40 +42,55 @@ All tables are normalized and follow basic relational database principles.
 
 Here are some examples of SQL queries practiced in this project:
 
-```
-#1)Write query to get total sales and total profit between year 2011 and 2013?
-select Year(a.OrderDate) Year, sum(b.Sales) Total_Sales, sum(b.Profit) Total_Profit  from tata_tb1 a
-inner join tata_tb2 b
-on a.OrderID = b.OrderID
-where Year(a.OrderDate) between 2011 and 2013
-group by Year(a.OrderDate)
-order by Year(a.OrderDate);
+## SQL Query Examples
 
-#2)Write a query to get total sales, total profit and total order qty by country, state, category and sub-category?
-select a.country, a.state, b.category, b.SubCategory, sum(b.Sales) Total_Sales,sum(b.Profit) Total_Profit,sum(b.OrderQuantity) Total_OrderQuantity 
-from tata_tb1 a
-inner join tata_tb2 b
-on a.OrderID = b.OrderID 
-group by a.country, a.state, b.category, b.SubCategory;
+<details>
+  <summary>1) Total Sales and Total Profit between 2011 and 2013</summary>
 
-#3)Write stored procedure to get top 10 customers based on total sales?
-delimiter $$
-create procedure top10customersontotalsales(
-IN num int)
-begin
-select * from
-(
-select *,rank() over (order by Total_Sales desc)rnk from
-(
-Select a.CustomerName, sum(b.sales) Total_Sales from tata_tb1 a
-inner join tata_tb2 b
-on a.OrderID = b.OrderID
-group by a.CustomerName
-)t1)t2 where rnk <= 10;
-end
+```sql
+SELECT YEAR(a.OrderDate) AS Year, 
+       SUM(b.Sales) AS Total_Sales, 
+       SUM(b.Profit) AS Total_Profit
+FROM tata_tb1 a
+INNER JOIN tata_tb2 b
+    ON a.OrderID = b.OrderID
+WHERE YEAR(a.OrderDate) BETWEEN 2011 AND 2013
+GROUP BY YEAR(a.OrderDate)
+ORDER BY YEAR(a.OrderDate);
+</details> <details> <summary>2) Total Sales, Profit, and Order Quantity by Country, State, Category, and Sub-Category</summary>
+SELECT a.Country, 
+       a.State, 
+       b.Category, 
+       b.SubCategory, 
+       SUM(b.Sales) AS Total_Sales,
+       SUM(b.Profit) AS Total_Profit,
+       SUM(b.OrderQuantity) AS Total_OrderQuantity
+FROM tata_tb1 a
+INNER JOIN tata_tb2 b
+    ON a.OrderID = b.OrderID
+GROUP BY a.Country, a.State, b.Category, b.SubCategory;
+</details> <details> <summary>3) Stored Procedure to Get Top 10 Customers Based on Total Sales</summary>
+DELIMITER $$
+
+CREATE PROCEDURE top10customersontotalsales(IN num INT)
+BEGIN
+    SELECT * FROM (
+        SELECT *, RANK() OVER (ORDER BY Total_Sales DESC) AS rnk
+        FROM (
+            SELECT a.CustomerName, SUM(b.Sales) AS Total_Sales
+            FROM tata_tb1 a
+            INNER JOIN tata_tb2 b
+                ON a.OrderID = b.OrderID
+            GROUP BY a.CustomerName
+        ) t1
+    ) t2
+    WHERE rnk <= 10;
+END
 $$
+</details> ```
+✅ Features of this README:
 
-```
+
 
 <h2> Goals of the Project</h2>
 

@@ -96,7 +96,6 @@ BEGIN
 END
 $$ ```
 </details> 
-✅ Features of this README:
 
 
 

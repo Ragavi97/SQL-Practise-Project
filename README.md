@@ -42,6 +42,14 @@ All tables are normalized and follow basic relational database principles.
 
 Here are some examples of SQL queries practiced in this project:
 
+<h2> Goals of the Project</h2>
+
+- Refresh my understanding of SQL fundamentals.
+- Practice writing both simple and complex SQL queries.
+- Understand relational database design and normalization.
+- Gain experience with advanced SQL concepts like window functions and CTEs.
+- Prepare for real-world data analysis and backend database work.
+
 ## SQL Query Examples
 
 <details>
@@ -86,17 +94,11 @@ BEGIN
     ) t2
     WHERE rnk <= 10;
 END
-$$
-</details> ```
+$$ ```
+</details> 
 ✅ Features of this README:
 
 
 
-<h2> Goals of the Project</h2>
 
-- Refresh my understanding of SQL fundamentals.
-- Practice writing both simple and complex SQL queries.
-- Understand relational database design and normalization.
-- Gain experience with advanced SQL concepts like window functions and CTEs.
-- Prepare for real-world data analysis and backend database work.
 

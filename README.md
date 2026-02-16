@@ -10,13 +10,31 @@ The repository contains the following main components:
 <h3>Tables</h3>
 The project includes several tables to practice SQL concepts, including:
 <ul>
-<li>Users – Stores user information like user_id, name, email, and registration_date.</li>
-<li>Products – Contains product details such as product_id, product_name, price, and category.</li>
-<li>Orders – Records orders placed by users with order_id, user_id, product_id, quantity, and order_date.</li>
-<li>Suppliers – Maintains supplier information with supplier_id, supplier_name, and contact_info.</li>
-<li>Inventory – Tracks stock details with product_id, supplier_id, stock_quantity, and restock_date.</li>
+<li>Company – Company table holds fields like  user_id, name, email, and registration_date.</li>
+<li>Employee – Contains product details such as product_id, product_name, price, and category.</li>
+<li>Department – Records orders placed by users with order_id, user_id, product_id, quantity, and order_date.</li>
 </ul>
-
-
-
 All tables are normalized and follow basic relational database principles.
+
+# SQL Concepts Practiced
+
+## Basic SQL
+- **SELECT statements** for retrieving data
+- **Filtering data** using `WHERE`
+- **Sorting results** with `ORDER BY`
+- **Aggregation** with `GROUP BY` and `HAVING`
+- Using functions like `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
+- **Joining tables** with `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`
+- **Subqueries** and nested queries
+- Using `DISTINCT` to remove duplicates
+
+## Advanced SQL
+- **Complex joins** (`FULL OUTER JOIN`, `SELF JOIN`)
+- **Window functions** (`ROW_NUMBER()`, `RANK()`, `LEAD()`, `LAG()`)
+- **CTEs (Common Table Expressions)** and recursive queries
+- **Advanced filtering** with `CASE` statements
+- **Transactions** and ACID properties
+- **Indexes** and query optimization
+- **Views** and temporary tables
+- **Stored procedures and functions** (optional, if applied)
+

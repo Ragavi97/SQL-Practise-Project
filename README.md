@@ -77,3 +77,11 @@ $$
 
 ```
 
+<h2> Goals of the Project</h2>
+
+- Refresh my understanding of SQL fundamentals.
+- Practice writing both simple and complex SQL queries.
+- Understand relational database design and normalization.
+- Gain experience with advanced SQL concepts like window functions and CTEs.
+- Prepare for real-world data analysis and backend database work.
+
